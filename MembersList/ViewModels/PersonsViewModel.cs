@@ -2,8 +2,10 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Linq;
 
 using Xamarin.Forms;
+using System.Collections.Generic;
 
 namespace MembersList
 {
@@ -21,8 +23,24 @@ namespace MembersList
             MessagingCenter.Subscribe<NewPersonPage, Person>(this, "AddPerson", async (obj, person) =>
             {
                 var _person = person as Person;
-                Persons.Add(_person);
-                await DataStore.AddPersonAsync(_person);
+
+                var existingPerson = await DataStore.GetPersonAsync(_person?.Id);
+
+                if(existingPerson == null)
+                {
+                    Persons.Add(_person);
+                    await DataStore.AddPersonAsync(_person);
+                }
+                else
+                {
+                    Persons.Remove(_person);
+                    Persons.Add(_person.CloneOf()); // To force the UI to reload the property
+
+                    await DataStore.UpdatePersonAsync(_person);
+                }
+
+                await ExecuteLoadPersonsCommand(); // Necessary to apply the OrderBy on the list
+
             });
         }
 
@@ -36,8 +54,9 @@ namespace MembersList
             try
             {
                 Persons.Clear();
+
                 var persons = await DataStore.GetPersonsAsync(true);
-                foreach (var person in persons)
+                foreach (var person in persons.ToList().OrderBy(p => p.LastName))
                 {
                     Persons.Add(person);
                 }

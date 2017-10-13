@@ -14,10 +14,10 @@ namespace MembersList
             persons = new List<Person>();
             var mockpersons = new List<Person>
             {
-                new Person { Id = Guid.NewGuid().ToString(), LastName = "Wayne", FirstName="Bruce" },
-                new Person { Id = Guid.NewGuid().ToString(), LastName = "Kent", FirstName="Clark" },
-                new Person { Id = Guid.NewGuid().ToString(), LastName = "Stark", FirstName="Tony" },
-                new Person { Id = Guid.NewGuid().ToString(), LastName = "Skywalker", FirstName="Anakin" },
+                new Person { Id = Guid.NewGuid().ToString("N"), LastName = "Wayne", FirstName="Bruce" },
+                new Person { Id = Guid.NewGuid().ToString("N"), LastName = "Kent", FirstName="Clark" },
+                new Person { Id = Guid.NewGuid().ToString("N"), LastName = "Stark", FirstName="Tony" },
+                new Person { Id = Guid.NewGuid().ToString("N"), LastName = "Skywalker", FirstName="Anakin" },
             };
 
             foreach (var person in mockpersons)

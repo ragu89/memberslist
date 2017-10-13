@@ -29,5 +29,10 @@ namespace MembersList
 
             BindingContext = this.viewModel = viewModel;
         }
+
+        private async void Update_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new NewPersonPage(viewModel.Person));
+        }
     }
 }

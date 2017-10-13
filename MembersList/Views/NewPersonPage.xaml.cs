@@ -8,16 +8,13 @@ namespace MembersList
     {
         public Person Person { get; set; }
 
-        public NewPersonPage()
+        public NewPersonPage() : this(new Person() { Id = System.Guid.NewGuid().ToString("N"), LastName = "Last Name", FirstName = "First Name" })
+        { }
+
+        public NewPersonPage(Person person)
         {
             InitializeComponent();
-
-            Person = new Person
-            {
-                LastName = "Last Name",
-                FirstName = "First Name"
-            };
-
+            Person = person;
             BindingContext = this;
         }
 
