@@ -5,6 +5,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MembersList", "MembersList\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MembersList.iOS", "iOS\MembersList.iOS.csproj", "{FE07AA4C-657D-4C3B-82C1-9070091D0A32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MembersList.Droid", "Droid\MembersList.Droid.csproj", "{7AB0CC52-0107-464C-873B-9A5DBFC8D8EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -21,5 +23,13 @@ Global
 		{FE07AA4C-657D-4C3B-82C1-9070091D0A32}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{FE07AA4C-657D-4C3B-82C1-9070091D0A32}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{FE07AA4C-657D-4C3B-82C1-9070091D0A32}.Debug|iPhone.Build.0 = Debug|iPhone
+		{7AB0CC52-0107-464C-873B-9A5DBFC8D8EF}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{7AB0CC52-0107-464C-873B-9A5DBFC8D8EF}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{7AB0CC52-0107-464C-873B-9A5DBFC8D8EF}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{7AB0CC52-0107-464C-873B-9A5DBFC8D8EF}.Release|iPhone.Build.0 = Release|Any CPU
+		{7AB0CC52-0107-464C-873B-9A5DBFC8D8EF}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{7AB0CC52-0107-464C-873B-9A5DBFC8D8EF}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{7AB0CC52-0107-464C-873B-9A5DBFC8D8EF}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{7AB0CC52-0107-464C-873B-9A5DBFC8D8EF}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
